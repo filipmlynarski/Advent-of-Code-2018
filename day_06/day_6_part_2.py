@@ -5,9 +5,7 @@ puzzle = open('puzzle', 'r').read().splitlines()
 puzzle = [tuple(map(int, re.findall(r'\d+', i))) for i in puzzle]
 
 def is_close_enough(x, y):
-	distances = 0
-	for point in puzzle:
-		distances += abs(point[0] - x) + abs(point[1] - y)
+	distances = sum(abs(i[0]-x) + abs(i[1]-y) for i in puzzle)
 	if distances < 10000:
 		return 1
 	return 0

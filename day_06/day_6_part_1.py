@@ -57,5 +57,5 @@ for i in range(1, len(puzzle)+1):
 	else:
 		counted2.append(0)
 
-highest_area = sorted(counted2)[-2] # should be -1
+highest_area = sorted(counted2)[-1]
 print(highest_area)
