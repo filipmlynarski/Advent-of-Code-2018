@@ -10,6 +10,6 @@ for dir_name in sorted([i for i in os.listdir('.') if os.path.isdir(i) and i != 
 		output = os.popen('cd {}; python3 day_{}_part_{}.py; cd ..'.format(dir_name, day, part)).read()
 		total_time = time.time() - start
 		total_runtime += total_time
-		print('[{:<6}s] day{} part{} output: {}'.format(round(total_time, 4), day, part, output[:-1]))
+		print('[{:<6}s] day{}-{:<2} output: {}'.format(round(total_time, 4), day, 'I'*part, output[:-1]))
 
 print('Total runtime: {}s'.format(round(total_runtime, 3)))
