@@ -1,5 +1,4 @@
 import re
-from collections import defaultdict
 
 puzzle = open('puzzle', 'r').read().splitlines()
 puzzle = [tuple(map(int, re.findall(r'\d+', i))) for i in puzzle]
