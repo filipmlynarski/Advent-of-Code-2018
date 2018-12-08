@@ -1,6 +1,3 @@
-import re
-from collections import defaultdict
-
 puzzle = open('puzzle', 'r').read().splitlines()
 x = {}
 
