@@ -1,5 +1,4 @@
 import re
-import numpy as np
 from collections import defaultdict
 
 puzzle = open('puzzle', 'r').read().splitlines()
@@ -15,19 +14,19 @@ while True:
 	min_x = min(points.keys(), key=lambda x: x[0])[0]
 	min_y = min(points.keys(), key=lambda x: x[1])[1]
 
-	grid = np.zeros(size, dtype=int)
+	grid = [['.']*size[1] for _ in range(size[0])]
 	for p in points:
 		x, y = p[0]-min_x, p[1]-min_y#+(size[0]//2)
 
-		if 0 <= y < grid.shape[0] and 0 <= x < grid.shape[1]:
-			grid[y, x] = 1
+		if 0 <= y < size[0] and 0 <= x < size[1]:
+			grid[y][x] = '#'
 		else:
 			if done:
 				exit()
 			break
 	else:
 		for i in grid:
-			print(''.join(map(str,i)).replace('0', '.').replace('1', '#'))
+			print(''.join(i))
 		print(s)
 		done = True
 	
